@@ -1,0 +1,25 @@
+language: go
+
+notifications:
+  email:
+    recipients:
+      - glug-organisers@googlegroups.com
+    on_success: never
+    on_failure: always
+
+go:
+- 1.x
+
+env:
+  global:
+    - GO111MODULE=on
+    - GOPROXY=https://proxy.golang.org
+
+install: "echo no install step required"
+
+script:
+  - go mod tidy
+  - rm -rf docs
+  - ./_scripts/rebuild.sh
+  - if [[ -n $CHECK_GOFMT ]]; then diff <(echo -n) <(gofmt -d .); fi
+  - test -z "$(git status --porcelain)" || (git status; git diff; false)
