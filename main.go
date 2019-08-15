@@ -1,6 +1,6 @@
 // raffle is a GopherJS application that generates Twitter-based entries into a simple raffle
 //
-// For more details see github.com/go-london-user-group/raffle
+// For more details see github.com/LondonGophers/raffle
 package main
 
 import (

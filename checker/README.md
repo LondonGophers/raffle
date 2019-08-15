@@ -1,7 +1,7 @@
 ## `checker`
 
 The `checker` app requires Twitter API credentials. See [the
-wiki](https://github.com/go-london-user-group/raffle/wiki/checker-Twitter-credentials).
+wiki](https://github.com/LondonGophers/raffle/wiki/checker-Twitter-credentials).
 
 ### Usage
 
