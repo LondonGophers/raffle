@@ -18,7 +18,7 @@ Entering the London Gophers raffle results in a tweet like this:
 > Hey @LondonGophers, please enter me into the @jetbrains raffle! bc2e8bba9e5e18c3bc1a7319a0ff04e8358cb7367dd38e029d26f545fdd9fc7a #LondonGophers
 
 The 64-bit hash is the result of hashing the entrant's Twitter handle and the "secret". Entries can then be verified
-using the very bare-bones `github.com/go-london-user-group/raffle/checker`.
+using the very bare-bones `github.com/LondonGophers/raffle/checker`.
 
 ### Using `raffle`
 
@@ -26,7 +26,7 @@ using the very bare-bones `github.com/go-london-user-group/raffle/checker`.
 
 ```html
 <iframe
-  src="https://go-london-user-group.github.io/raffle/"
+  src="https://londongophers.github.io/raffle/"
   style="border:0px;width:100%;overflow:hidden">
 </iframe>
 ```
@@ -38,4 +38,4 @@ The content of the generated tweet is controlled by two URL parameters:
 
 Both the greeting and hashtags should be URL-encoded. For example, the London Gophers URL is:
 
-https://go-london-user-group.github.io/raffle/?greeting=Hey%20%40LondonGophers%2C%20please%20enter%20me%20into%20the%20%40jetbrains%20raffle!&amp;hashtags=LondonGophers
+https://londongophers.github.io/raffle/?greeting=Hey%20%40LondonGophers%2C%20please%20enter%20me%20into%20the%20%40jetbrains%20raffle!&amp;hashtags=LondonGophers

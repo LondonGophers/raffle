@@ -1,4 +1,4 @@
-module github.com/go-london-user-group/raffle
+module github.com/LondonGophers/raffle
 
 replace github.com/gopherjs/gopherjs => github.com/myitcv/gopherjs v1.12.0
 
