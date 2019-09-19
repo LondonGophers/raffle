@@ -102,7 +102,7 @@ func mainerr() (err error) {
 
 	var winners []entry
 	for _, e := range entries {
-		if check(*fKey, e) {
+		if check(strings.ToLower(*fKey), e) {
 			winners = append(winners, e)
 		}
 	}
@@ -188,7 +188,7 @@ func twitterEntries() (res []entry) {
 			errorf("failed to find single hash in tweet %v", t.ID)
 		}
 		res = append(res, entry{
-			handle: t.User.ScreenName,
+			handle: strings.ToLower(t.User.ScreenName),
 			hash:   hashes[0],
 		})
 	}
@@ -216,7 +216,7 @@ func nonTwitterEntries() (res []entry) {
 			errorf("pair %q invalid format; should be handle:hash", p)
 		}
 		res = append(res, entry{
-			handle: parts[0],
+			handle: strings.ToLower(parts[0]),
 			hash:   parts[1],
 		})
 	}
@@ -235,7 +235,7 @@ type entry struct {
 func check(secret string, e entry) bool {
 	hash := sha256.New()
 	fmt.Fprintf(hash, "Handle: %v\n", e.handle)
-	fmt.Fprintf(hash, "Key: %v\n", *fKey)
+	fmt.Fprintf(hash, "Key: %v\n", secret)
 
 	valid := fmt.Sprintf("%x", hash.Sum(nil))
 	return valid == e.hash
