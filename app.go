@@ -121,8 +121,8 @@ func (a AppDef) buildURL() (res string, errStr string) {
 	ns := a.State()
 
 	hash := sha256.New()
-	fmt.Fprintf(hash, "Handle: %v\n", strings.TrimSpace(ns.handle))
-	fmt.Fprintf(hash, "Key: %v\n", strings.TrimSpace(ns.key))
+	fmt.Fprintf(hash, "Handle: %v\n", strings.ToLower(strings.TrimSpace(ns.handle)))
+	fmt.Fprintf(hash, "Key: %v\n", strings.ToLower(strings.TrimSpace(ns.key)))
 
 	q := target.Query()
 	q.Set("text", fmt.Sprintf("%v %x", curr.Query().Get("greeting"), hash.Sum(nil)))
